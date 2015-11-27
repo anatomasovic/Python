@@ -1,0 +1,40 @@
+import numpy as np
+
+import pylab as pl
+
+
+x = [0, 0.4, 0.8, 1.2, 1.6, 2.0]
+
+y = [0.21, 1.25, 2.31, 2.70, 2.65, 3.20]
+
+
+# Trazimo koeficijente regresijskog pravca
+
+koef = np.polyfit(x, y, 1)
+
+koef2 = np.polyfit(x, y, 2)
+
+
+# Proslijedino koeficijente poly1d funkciji
+
+pravac = np.poly1d(koef)
+
+pravac2 = np.poly1d(koef2)
+
+
+xpar = np.linspace(0, 2.0, 50)
+
+
+yPravac = pravac(x)
+
+yParabola = pravac2(xpar)
+
+
+pl.plot(x, y, 'o', x, yPravac, '-', xpar, yParabola, 'm')
+
+pl.show()
+
+
+print "Priblizna vrijednost linerane regresije u 1.4: ", pravac(1.4)
+
+print "Priblizna vrijednost kvadratne regresije u 1.4: ", pravac2(1.4)
