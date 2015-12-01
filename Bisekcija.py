@@ -34,7 +34,7 @@ def bisekcija(a, b, eps, maxiter = 30):
         poloviste = (a + b)/2.0
         i = i + 1
         print "%s. iteracija: %s" % (i, poloviste)
-        return poloviste, i
+    return poloviste, i
         
 xn, i = bisekcija(a, b, 10**-8)
 
