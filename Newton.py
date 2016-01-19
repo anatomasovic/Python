@@ -30,7 +30,7 @@ def newton(x, eps, max_iter = 20):
         i = 1
         while (i <= max_iter):
             if abs(df(x)) < eps:
-                print "U tocki x je horizontalna tangenta.\n";
+                print "U tocki x je horizontalna tangenta.\n"
                 # U sljedecem koraku bi se dijelilo s nulom, pa izlazimo
                 break
             dx = f(x)/df(x)
